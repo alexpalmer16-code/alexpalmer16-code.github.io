@@ -4,6 +4,9 @@ The audience is sales and GTM leaders deciding how AI should change commercial w
 The aim is useful judgment, not a volume target. AI supports Alex's thinking; it
 must not invent his experience, evidence or personality.
 
+Use [WRITING.md](WRITING.md) for the voice, zero-em-dash rule and sentence-pattern
+review. [AGENTS.md](AGENTS.md) tells repository-based agents which guidance to read.
+
 ## Classify each piece on two dimensions
 
 Choose one primary subject and one format. Subjects describe what the piece is
@@ -28,7 +31,7 @@ subject bucket. Over roughly ten pieces, aim for 40% analysis, 30% playbooks,
 20% experiments and 10% responses to important developments. A response can be
 labelled Analysis or Prediction; this is portfolio guidance, not a weekly quota.
 
-## Input contract — private notes only
+## Input contract: private notes only
 
 Before drafting, capture:
 
@@ -57,6 +60,8 @@ Distinguish missing evidence from a missing opinion. Do not fill either in.
 - [ ] The strongest counterargument and relevant limitations are addressed.
 - [ ] The selected format meets its requirements above.
 - [ ] Language is direct and commercially specific; remove hype, filler and generic AI conclusions.
+- [ ] The final edit in WRITING.md is complete, including zero em dashes and a human review of repetitive sentence patterns.
+- [ ] Worked examples distinguish intended outcomes from measured results; an illustrative workflow is labelled as such.
 - [ ] A diagram is included only if it clarifies the argument; decorative art is optional.
 - [ ] The ending gives a useful decision or question, not an automatic sales pitch.
 
@@ -68,6 +73,10 @@ Distinguish missing evidence from a missing opinion. Do not fill either in.
 - [ ] All template tokens are replaced, and HTML special characters are escaped where needed.
 - [ ] Local checks pass and the visual review in [PUBLISHING.md](PUBLISHING.md) is complete.
 - [ ] Alex explicitly approves the exact revision to publish. New edits need a fresh review.
+
+The automated checker catches em dashes in public HTML, the article template and
+the project writing guides, including encoded HTML forms. It does not verify
+personal authenticity, evidence quality or sentence-level judgment.
 
 ## Weekly production session: approximately one hour
 

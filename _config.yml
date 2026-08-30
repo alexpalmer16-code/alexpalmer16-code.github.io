@@ -2,6 +2,8 @@
 exclude:
   - README.md
   - DESIGN.md
+  - AGENTS.md
+  - WRITING.md
   - EDITORIAL.md
   - PUBLISHING.md
   - _templates
