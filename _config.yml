@@ -1,0 +1,8 @@
+# Development materials are public in GitHub, but not part of the Pages website.
+exclude:
+  - README.md
+  - DESIGN.md
+  - EDITORIAL.md
+  - PUBLISHING.md
+  - _templates
+  - scripts

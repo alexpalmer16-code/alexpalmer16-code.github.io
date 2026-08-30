@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Copy into insights/your-slug.html only after the draft is approved for public review.
+     Replace every {{TOKEN}}. This template is excluded from GitHub Pages by _config.yml.
+     Keep private notes and unapproved drafts outside this public repository. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} | Alex Palmer</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="author" content="Alex Palmer">
+  <link rel="canonical" href="https://alexpalmer16-code.github.io/insights/{{SLUG}}.html">
+  <meta property="og:site_name" content="Alex Palmer">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{TITLE}} | Alex Palmer">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="https://alexpalmer16-code.github.io/insights/{{SLUG}}.html">
+  <meta property="article:author" content="https://www.linkedin.com/in/alex-palmer/">
+  <meta property="article:published_time" content="{{DATE_ISO}}">
+  <meta property="article:section" content="{{PILLAR}}">
+  <meta property="article:tag" content="{{FORMAT}}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{TITLE}} | Alex Palmer">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <!-- ../ goes up one folder, so every article uses the same stylesheet. -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Alex Palmer</a>
+    <nav aria-label="Main navigation">
+      <a href="/insights.html" aria-current="location">Insights</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article>
+      <header class="article-header">
+        <a class="back-link" href="/insights.html">← All insights</a>
+        <p class="eyebrow">{{FORMAT}} · {{PILLAR}}</p>
+        <h1>{{TITLE}}</h1>
+        <p class="article-deck">{{DECK}}</p>
+        <div class="article-byline">
+          <span>Alex Palmer</span>
+          <time datetime="{{DATE_ISO}}">{{DATE_DISPLAY}}</time>
+          <span>{{READ_MINUTES}} min read</span>
+        </div>
+      </header>
+
+      <!-- The article's visible text lives here. Keep one h1, then h2 sections. -->
+      <div class="article-body">
+        <p class="lead">{{OBSERVATION_AND_THESIS}}</p>
+        <h2>{{SECTION_HEADING}}</h2>
+        <p>{{ARGUMENT_AND_EVIDENCE}}</p>
+        <h2>The tradeoff</h2>
+        <p>{{TRADEOFF_AND_LIMITS}}</p>
+        <h2>What I would do next</h2>
+        <p>{{COMMERCIAL_DECISION}}</p>
+        <!-- Add linked sources beside the claims they support. Never invent a URL.
+             Playbook: inputs, steps, human checks, usable output, failure cases.
+             Experiment: method, baseline, observation, limits, next test.
+             Prediction: time horizon, reasoning, falsifier, revisit date.
+             Replace this outline when another structure serves the argument better. -->
+      </div>
+
+      <footer class="article-footer">
+        <p class="eyebrow">Continue reading</p>
+        <a class="text-link" href="/insights.html">Browse all insights →</a>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <p>© {{YEAR}} Alex Palmer</p>
+    <p>Sales, GTM and AI</p>
+  </footer>
+</body>
+</html>
