@@ -51,6 +51,25 @@ class SiteCheckTests(unittest.TestCase):
         self.assertIn("legacy index must redirect", self.failures_with(
             "essays.html", "0; url=/insights.html", "0; url=/missing.html"))
 
+    def test_em_dash_spellings(self):
+        for dash in ("\u2014", "&mdash;", "&#8212;", "&#x2014;"):
+            with self.subTest(dash=dash):
+                self.assertIn("em dash found", self.failures_with(
+                    "index.html", "Building better commercial systems with AI.",
+                    "Better systems" + dash + "with AI."))
+
+    def test_em_dash_in_writing_guide(self):
+        self.assertIn("em dash found", self.failures_with(
+            "WRITING.md", "# Alex Palmer: writing guide", "# Alex Palmer\u2014writing guide"))
+
+    def test_em_dash_in_template(self):
+        self.assertIn("em dash found", self.failures_with(
+            "_templates/article.html", "What I would do next", "What I would do\u2014next"))
+
+    def test_compound_hyphen_is_allowed(self):
+        self.assertEqual("", self.failures_with(
+            "index.html", "Building better commercial systems with AI.", "AI-native systems."))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -6,7 +6,8 @@ Sales, GTM and AI. I write about how commercial teams can use AI to improve judg
 Start with [PUBLISHING.md](PUBLISHING.md) for the file map, local preview and
 branch → approval → publish workflow. Use [EDITORIAL.md](EDITORIAL.md) for
 content standards and [the article template](_templates/article.html) for new pieces.
-The visual brief remains in [DESIGN.md](DESIGN.md).
+The visual brief remains in [DESIGN.md](DESIGN.md). Read [WRITING.md](WRITING.md)
+for voice and sentence rules; [AGENTS.md](AGENTS.md) is the agent entry point.
 
 Run `python3 scripts/check_site.py` before review. No build dependencies required.
 This is a public repository: private drafts, transcripts and feedback logs belong elsewhere.

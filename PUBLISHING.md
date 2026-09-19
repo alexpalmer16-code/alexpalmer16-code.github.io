@@ -13,6 +13,9 @@ what visitors see. They are separate actions.
 | `essays/why-ai-adoption-is-a-management-problem.html` | The first article; its existing URL stays valid |
 | `insights/your-slug.html` | Location for new approved articles |
 | `styles.css` | Shared colours, fonts, layout, spacing and mobile rules |
+| `AGENTS.md` | Entry-point instructions for agents working in this repository |
+| `WRITING.md` | Voice, zero-em-dash rule and sentence-pattern editing |
+| `EDITORIAL.md` | Evidence, input contract and editorial approval checks |
 | `_templates/article.html` | Copyable article structure; not a published article |
 | `essays.html` | Compatibility redirect to Insights; keep it for old links |
 | `<a href="/insights.html">Insights</a>` | `href` is the destination; the text between tags is the label |
@@ -31,8 +34,12 @@ you will check it. Example: “Change the second homepage card to the approved
 meeting-preparation playbook; keep the buying-window card third and preserve
 the typography. Prepare a preview; do not publish.”
 
-Use a working branch based on the latest `main`. The current foundation branch
-is `system/insights-publishing`; later article branches can be `content/meeting-preparation`.
+Read `AGENTS.md` and its linked guides first. With a GitHub-only connector, fetch
+them explicitly; do not assume a website URL loads repository instructions.
+
+Use a fresh working branch based on the latest `main`. The original foundation
+PR used `system/insights-publishing` and is now merged. Use branches such as
+`system/writing-guidance` or `content/meeting-preparation` for later changes.
 Do not edit `main` directly during review.
 
 Important: this repository and its branches are public. Store voice transcripts,
@@ -94,7 +101,8 @@ the working branch. Push it and open a draft pull request into `main`. Include:
 - Anything still missing and a clear “Do not merge until Alex approves”.
 
 The included GitHub Actions workflow runs the local checker on pull requests
-and on `main`. It checks structure, local links, shared CSS and sharing metadata;
+and on `main`. It checks structure, local links, shared CSS, sharing metadata and
+the zero-em-dash rule for public HTML, the template and project writing guides;
 it does not publish. The check is not enforced unless branch protection is
 configured separately. No protection or repository settings are changed here.
 
@@ -111,6 +119,25 @@ Run the published URL through LinkedIn's Post Inspector if a preview is stale:
 https://www.linkedin.com/post-inspector/ . Sharing services may cache cards.
 Open Graph and X metadata specify title/description/URL. No share image is
 provided yet, and the platforms decide the final presentation.
+
+### Planned social-sharing image setup
+
+After the article's title and description are approved, prepare one reusable
+landscape title-card design, approximately 1200 by 630 pixels. Match DESIGN.md:
+warm off-white, charcoal text, one dark-green accent and no generic AI imagery.
+Export a title-specific PNG or JPEG into `assets/images/` and inspect its text
+and legibility at a small preview size. Keep its headline consistent with the article.
+
+In the article's `<head>`, add `og:image`, `og:image:alt`, image dimensions and
+`twitter:image` with absolute public image URLs; change `twitter:card` to
+`summary_large_image` only when that page has a real, accessible image. Add
+`twitter:image:alt` too. Extend the checker and tests to accept image cards only
+with valid image metadata. Do not switch unrelated pages to large-image cards.
+
+Preview the image and metadata in the PR, obtain approval, publish, then check
+the live image and LinkedIn Post Inspector. Preview caches may need refreshing.
+No image or automated card generator has been created by these instructions.
+Manual X distribution does not require a paid connector.
 
 Do not claim “published” based only on a successful commit. If the live check
 fails, report it and fix on a new branch. Reverting a merged PR creates a

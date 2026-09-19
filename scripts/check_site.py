@@ -2,6 +2,7 @@
 """Dependency-free static checks, not a browser or a full HTML validator."""
 
 from datetime import date
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -75,6 +76,16 @@ def check(root=ROOT):
     def require(condition, path, message):
         if not condition:
             errors.append(f"{path.relative_to(root)}: {message}")
+
+    writing_paths = paths + [root / name for name in (
+        "AGENTS.md", "WRITING.md", "EDITORIAL.md", "PUBLISHING.md", "README.md",
+        "_templates/article.html",
+    )]
+    for path in writing_paths:
+        if path.is_file():
+            source = path.read_text(encoding="utf-8")
+            require("\u2014" not in unescape(source), path,
+                    "em dash found; rewrite the sentence per WRITING.md")
 
     def local_target(path, url):
         parsed = urlsplit(url)
@@ -158,5 +169,5 @@ if __name__ == "__main__":
     if failures:
         print("FAIL\n" + "\n".join(failures))
         sys.exit(1)
-    print(f"PASS: {len(checked)} public HTML pages; internal links, anchors, shared CSS and metadata.")
+    print(f"PASS: {len(checked)} public HTML pages; links, anchors, CSS, metadata and zero-em-dash checks.")
     print("Still required: browser/mobile review, source verification and Alex's publication approval.")
